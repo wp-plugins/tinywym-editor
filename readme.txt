@@ -3,7 +3,7 @@ Contributors: arickards
 Tags: tinyMCE, WYSIWYM, WP Editor
 Requires at least: 4.2.0
 Tested up to: 4.2.3
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,9 +11,11 @@ Convert WordPress's WYSIWYG editor into a WYSIWYM editor. Add and edit any HTML 
 
 == Description ==
 
-tinyWYM Editor was created to help inexperienced WordPress users create cleaner, more semantic markup, and to avoid some the pitfalls of WordPress's standard WYSIWYG editor. It does this by labelling and highlighting all HTML elements in the editor, creating a visual representation of the HTML being generated.
+tinyWYM Editor was created to help inexperienced WordPress users create cleaner, more semantic markup, and to avoid some of the pitfalls of WordPress's standard WYSIWYG editor. It does this by labelling and highlighting all HTML elements in the editor, creating a visual representation of the HTML being generated.
 
 tinyWYM Editor also gives more experience users all the control and flexibility of the text editor without having to leave the visual editor. Create and edit any HTML element, add attributes, and wrap or unwrap elements all from the visual editor.
+
+See the [Screenshots](https://wordpress.org/plugins/tinywym-editor/screenshots/ "Screenshots") and [FAQ](https://wordpress.org/plugins/tinywym-editor/faq/ "Frequently Asked Questions") sections for details on how to use tinyWYM Editor.
 
 == Installation ==
 
@@ -42,15 +44,15 @@ To wrap an element in another element, place the caret inside the element that y
 
 = How do I edit or add attributes to an HTML element? =
 
-Click any element while holding Alt and a dialogue will appear where you can edit the current HTML tag and any attributes it might have or you want to give it. Click the 'Okay' button.
+Click any element while holding the Alt key and a dialogue will appear where you can edit the current HTML tag and any attributes it might have or you want to give it. Click the 'Okay' button.
 
 = How do I unwrap an HTML element from its parent element or remove text from its containing element? =
 
-Click any element while holding the Shift+Alt and that element will be removed from you markup preserving any inner text or child elements.
+Click any element while holding the Shift+Alt and that element will be removed from the markup but preserve any inner text or child elements.
 
 = Why does tinyWYM Editor remove my theme's editor styles? =
 
-tinyWYM Editor removes the current theme's editor stylesheet. It does this partly in order to prevent conflicts with the theme's editor styles, but mainly because it is assumed that if you are using tinyWYM editor it is because you want to see the markup being posted to the front end of the site and not what it will eventually. After all, that is what the plugin is for.
+tinyWYM Editor removes the current theme's editor stylesheet. It does this partly in order to prevent conflicts with the theme's editor styles, but mainly because it is assumed that if you are using tinyWYM editor it is because you want to see the markup being posted to the front end of the site and not what it will eventually look like. After all, that is what the plugin is for.
 
 == Screenshots ==
 
