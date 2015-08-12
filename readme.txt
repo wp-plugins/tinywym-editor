@@ -56,17 +56,21 @@ tinyWYM Editor removes the current theme's editor stylesheet. It does this partl
 
 == Screenshots ==
 
-1. Wordpress editor without tinyWYM installed: Everything looks okay…
+1. Wordpress editor without tinyWYM installed: Everything looks okay, but…
 2. With tinyWYM installed: empty tags and superfluous markup revealed.
 3. tinyWYM Editor converts WordPress's WYSIWYG editor into a WYSIWYM editor.
-4. Create any HTML tag from selection. Select text then click button or hit Ctrl+T.
-5. Wrap the current element in a new HTML element. Place caret in element you want to wrap, then click button or hit Ctrl+T.
-6. Wrap multiple elements in a new HTML element. Select element you want to wrap, then click button or hit Ctrl+T.
-7. Enter new HTML tag name and any attributes you want it to have. Click 'Okay'.
-8. Elements are now wrapped in new element.
-9. Edit any element. Alt+Click any element then edit its tag and attributes.
+4. Create any HTML tag from selection - Select text then click the button or hit Ctrl+T.
+5. Wrap the current element in a new HTML element - Place caret in element you want to wrap, then click the button or hit Ctrl+T.
+6. Wrap multiple elements in a new HTML element - Select elements you want to wrap, then click the button or hit Ctrl+T.
+7. Enter the new HTML tag name and any attributes you want it to have, then click 'Okay'.
+8. Elements are now wrapped in a new tag.
+9. Edit any element - Alt+Click any element then edit its tag and attributes.
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Update readme.txt & banner images for WordPress.org page
 
 = 1.0 =
 
