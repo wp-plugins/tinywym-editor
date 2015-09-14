@@ -177,6 +177,7 @@
 					text: editor.getLang( 'twym_editor.modal_cancel' ),
 					classes: 'cancel',
 					onclick: 'close',
+					styles: 'color: red; float: right;'
 				},
 				{
 					text: editor.getLang( 'twym_editor.modal_submit' ),

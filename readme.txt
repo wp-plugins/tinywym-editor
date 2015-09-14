@@ -2,8 +2,8 @@
 Contributors: arickards
 Tags: tinyMCE, WYSIWYM, WP Editor
 Requires at least: 4.2.0
-Tested up to: 4.2.3
-Stable tag: 1.0.1
+Tested up to: 4.3
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,37 +36,57 @@ There are two options for installing and setting up this plugin.
 
 = How do I create an HTML element from a selection? =
 
-To create a new element from a selection first select some text. tinyWYM Editor plugin adds a new button to the toolbar. Click it and a dialogue will appear with a field for your new tag and any attributes you want to give it. Click the 'Okay' button. (You can also hit Ctrl+T instead of clicking the button to open the dialogue.)
+To create a new element from a selection first select some text. tinyWYM Editor plugin adds a new button to the toolbar. Click it and a dialogue will appear with a field for your new tag and any attributes you want to give it. Enter your new HTML tag and any desired attributes, then click the 'Okay' button. (You can also hit Ctrl+T instead of clicking the button to open the dialogue.)
 
 = How do I wrap one HTML element in another HTML element? =
 
-To wrap an element in another element, place the caret inside the element that you want to wrap. tinyWYM Editor plugin adds a new button to the toolbar. Click it and a dialogue will appear with a field for your new tag and any attributes you want to give it. Click the 'Okay' button. (You can also hit Ctrl+T instead of clicking the button to open the dialogue.)
+To wrap an element in another element, place the caret inside the element that you want to wrap. tinyWYM Editor plugin adds a new button to the toolbar. Click it and a dialogue will appear with a field for your new tag and any attributes you want to give it. Enter your new HTML tag and any desired attributes, then click the 'Okay' button. (You can also hit Ctrl+T instead of clicking the button to open the dialogue.)
 
 = How do I edit or add attributes to an HTML element? =
 
-Click any element while holding the Alt key and a dialogue will appear where you can edit the current HTML tag and any attributes it might have or you want to give it. Click the 'Okay' button.
+Click any element while holding the Alt key and a dialogue will appear where you can edit the current HTML tag and any attributes it might have or you want to give it. Enter your new HTML tag and any desired attributes, then click the 'Okay' button.
 
 = How do I unwrap an HTML element from its parent element or remove text from its containing element? =
 
-Click any element while holding the Shift+Alt and that element will be removed from the markup but preserve any inner text or child elements.
+Click any element while holding the Shift+Alt and that element will be removed from the markup preserving any inner text or child elements.
 
 = Why does tinyWYM Editor remove my theme's editor styles? =
 
-tinyWYM Editor removes the current theme's editor stylesheet. It does this partly in order to prevent conflicts with the theme's editor styles, but mainly because it is assumed that if you are using tinyWYM editor it is because you want to see the markup being posted to the front end of the site and not what it will eventually look like. After all, that is what the plugin is for.
+tinyWYM Editor removes the current theme's editor stylesheet by default, however, you can enable your theme's editor stylesheet by going to Settings - tinyWYM Editor and checking 'Allow theme editor styles'. tinyWYM Editor removes other editor styles partly in order to prevent conflicts, but also because it is assumed that if you are using tinyWYM editor it is because you want to see the _markup_ being posted to the front end of the site and not what it will eventually look like. After all, that is what the plugin is for.
+
+= Can I disable tinyWYM Editor for certain users =
+
+tinyWYM Editor allows administrators to disable tinyWYM for particular user roles; Administrators, Editors, Authors, or Contributors. Go to Settings - tinyWYM Editor.
 
 == Screenshots ==
 
 1. Wordpress editor without tinyWYM installed: Everything looks okay, but…
 2. With tinyWYM installed: empty tags and superfluous markup revealed.
 3. tinyWYM Editor converts WordPress's WYSIWYG editor into a WYSIWYM editor.
-4. Create any HTML tag from selection - Select text then click the button or hit Ctrl+T.
-5. Wrap the current element in a new HTML element - Place caret in element you want to wrap, then click the button or hit Ctrl+T.
-6. Wrap multiple elements in a new HTML element - Select elements you want to wrap, then click the button or hit Ctrl+T.
+4. Create any HTML tag from selection: Select text then click the button or hit Ctrl+T.
+5. Wrap the current element in a new HTML element: Place caret in element you want to wrap, then click the button or hit Ctrl+T.
+6. Wrap multiple elements in a new HTML element: Select elements you want to wrap, then click the button or hit Ctrl+T.
 7. Enter the new HTML tag name and any attributes you want it to have, then click 'Okay'.
 8. Elements are now wrapped in a new tag.
-9. Edit any element - Alt+Click any element then edit its tag and attributes.
+9. Edit any element: Alt+Click any element then edit its tag and attributes.
 
 == Changelog ==
+
+= 1.1.1 =
+
+* Fix compatibility issue with older versions of PHP.
+
+= 1.1 =
+
+* Added new settings page
+* Added option for admins to disable tinyWYM for Administrators, Editors, Authors, or Contributors.
+* Added option to re-enable the current theme's editor styles.
+* Added option to increase tinyWYM priority when loading scripts. (This was mainly to allow tinyWYM to work with BeaverBuilder's front end editor.)
+
+= 1.0.2 =
+
+* CSS improvements
+* Increase script loading priority to allow for use with BeaverBuilder
 
 = 1.0.1 =
 
@@ -77,6 +97,18 @@ tinyWYM Editor removes the current theme's editor stylesheet. It does this partl
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1 =
+
+* Fix compatibility issue with older versions of PHP.
+
+= 1.1 =
+
+* Added new setting page: Setting - tinyWYM Editor
+
+= 1.0.2 =
+
+* Improved CSS for images inside editor, plus tinyWYM is now works with BeaverBuilder
 
 = 1.0 =
 

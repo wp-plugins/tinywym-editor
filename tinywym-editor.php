@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: tinyWYM Editor
-Description: Converts WordPress's WYSIWYG visual editor into a WYSIWYM editor
-Version:     1.0.1
+Description: tinyWYM Editor converts WordPress's WYSIWYG visual editor into a WYSIWYM editor. tinyWYM Editor also give the the control anf flexibility of the text editor without having to leave the visual editor.
+Version:     1.1.1
 Author:      Andrew Rickards
 License:     GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -24,12 +24,12 @@ Domain Path: /languages
 
 */
 
-//* If this file is called directly, abort ====================================
+//* If this file is called directly, abort ==================================== */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//* Load Plugin textdomain ====================================================
+//* Load Plugin textdomain ==================================================== */
 add_action( 'plugins_loaded', 'twym_load_textdomain' );
 
 function twym_load_textdomain() {
@@ -38,16 +38,36 @@ function twym_load_textdomain() {
 
 }
 
-//* Remove Theme's Editor Stylesheet ==========================================
-add_action( 'admin_init', 'twym_remove_editor_styles' );
+//* Admin Settings ============================================================ */
+include 'twym-admin-settings.php';
+
+//* Plugins Page Settings Link
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'twym_settings_link' );
+
+function twym_settings_link ( $links ) {
+
+	$links[] = '<a href="' . admin_url( 'options-general.php?page=tinywym-settings' ) . '">' . __( 'Settings', 'twym_editor' ) . '</a>';
+
+	return $links;
+}
+
+//* Remove Theme's Editor Stylesheet ========================================== */
+add_action( 'admin_init', 'twym_remove_editor_styles', 999 );
 
 function twym_remove_editor_styles() {
+
+	$settings = get_option( 'twym_settings' );
+	$theme_styles = isset( $settings[ 'theme_styles' ] ) ? '1' : false;
+
+	if ( '1' === $theme_styles ) {
+		return;
+	}
 
 	remove_editor_styles();
 
 }
 
-//* Add Editor Stylesheet =====================================================
+//* Add Editor Stylesheet ===================================================== */
 add_filter( 'mce_css', 'twym_add_editor_styles' );
 
 function twym_add_editor_styles( $mce_css ) {
@@ -62,10 +82,41 @@ function twym_add_editor_styles( $mce_css ) {
 
 }
 
-//* Register tinyMCE Plugin & Button ==========================================
+//* Register tinyMCE Plugin & Button ========================================== */
 add_action( 'init', 'twym_register_mce_plugin' );
 
 function twym_register_mce_plugin() {
+
+	// Get tinyWYM Settings
+	$settings = get_option( 'twym_settings' );
+	$disabled = isset( $settings[ 'disable' ] ) ? $settings[ 'disable' ] : array();
+	$priority = isset( $settings[ 'force_enable' ] ) ? 99999999 : 10;
+
+	// Extract user roles disabled in settings
+	extract( $disabled );
+
+	// Define user capabilities
+	$admin_capabilities       = current_user_can( 'manage_options' );
+	$editor_capabilities      = current_user_can( 'edit_pages' )           && ! current_user_can( 'manage_options' )       ? true : false;
+	$author_capabilities      = current_user_can( 'edit_published_posts' ) && ! current_user_can( 'edit_pages' )           ? true : false;
+	$contributor_capabilities = current_user_can( 'edit_posts' )           && ! current_user_can( 'edit_published_posts' ) ? true : false;
+
+	// Disable editor for various various user roles
+	if ( isset( $administrator ) && $admin_capabilities ) {
+		return;
+	}
+
+	if ( isset( $editor ) && $editor_capabilities ) {
+		return;
+	}
+
+	if ( isset( $author ) && $author_capabilities ) {
+		return;
+	}
+
+	if ( isset( $contributor ) && $contributor_capabilities ) {
+		return;
+	}
 
 	// Check user permissions
 	if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) {
@@ -75,13 +126,16 @@ function twym_register_mce_plugin() {
 	// Check if WYSIWYG is enabled
 	if ( get_user_option('rich_editing') == 'true') {
 
-		add_filter( 'mce_external_plugins', 'twym_add_mce_plugin' );
-		add_filter( 'mce_buttons', 'twym_register_mce_button' );
+		add_filter( 'mce_external_plugins', 'twym_add_mce_plugin', $priority );
+		add_filter( 'mce_buttons', 'twym_register_mce_button', $priority );
 
 		// Admin Styles for Modal Form
 		add_action( 'admin_enqueue_scripts', 'twym_enqueue_admin_style' );
 
 	}
+
+	// Tranlations
+	add_filter( 'mce_external_languages', 'twym_load_translation');
 
 }
 
@@ -103,7 +157,7 @@ function twym_register_mce_button( $buttons ) {
 
 }
 
-//* Enqueue Admin Styles for Modal Form =======================================
+//* Enqueue Admin Styles for Modal Form ======================================= */
 function twym_enqueue_admin_style() {
 
 	wp_register_style( 'custom_wp_admin_css', plugins_url( 'css/modal-styles.css', __FILE__ ), false, '1.0.0' );
@@ -111,9 +165,7 @@ function twym_enqueue_admin_style() {
 		
 }
 
-//* Load Translation File =====================================================
-add_filter( 'mce_external_languages', 'twym_load_translation');
-
+//* Load Translation File ===================================================== */
 function twym_load_translation( $locales ) {
 
 	$locales[ 'twym_editor' ] = plugin_dir_path ( __FILE__ ) . 'translations.php';
