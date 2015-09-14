@@ -1,0 +1,65 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: tinyWYM Editor\n"
+"POT-Creation-Date: 2015-08-06 18:27+1000\n"
+"PO-Revision-Date: 2015-08-06 18:27+1000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: tinywym-editor.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: translations.php:14
+msgid "Edit element"
+msgstr ""
+
+#: translations.php:15
+msgid "Create tag"
+msgstr ""
+
+#: translations.php:16
+msgid "Tag"
+msgstr ""
+
+#: translations.php:17
+msgid "Attributes"
+msgstr ""
+
+#: translations.php:18
+msgid "Cancel"
+msgstr ""
+
+#: translations.php:19
+msgid "Submit"
+msgstr ""
+
+#: translations.php:20
+msgid "Tag is required"
+msgstr ""
+
+#: translations.php:21
+msgid "Wrap selection or element in any HTML tag"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "tinyWYM Editor"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Converts WordPress's WYSIWYG visual editor into a WYSIWYM editor"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Andrew Rickards"
+msgstr ""
