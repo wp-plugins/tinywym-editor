@@ -19,6 +19,7 @@ function twym_translation() {
 		'modal_submit'       => __( 'Submit', 'twym_editor' ),
 		'alert_no_tag'       => __( 'Tag is required', 'twym_editor' ),
 		'tooltip_button'     => __( 'Wrap selection or element in any HTML tag', 'twym_editor' ),
+		'tooltip_toggle'     => __( 'Toggle tinyWYM', 'twym_editor' ),
 	);
 
 	$locale = _WP_Editors::$mce_locale;

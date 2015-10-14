@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: tinyWYM Editor\n"
-"POT-Creation-Date: 2015-09-05 13:40+1000\n"
-"PO-Revision-Date: 2015-09-05 13:39+1000\n"
+"POT-Creation-Date: 2015-10-14 22:56+1100\n"
+"PO-Revision-Date: 2015-10-14 22:55+1100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,10 @@ msgstr ""
 
 #: translations.php:21
 msgid "Wrap selection or element in any HTML tag"
+msgstr ""
+
+#: translations.php:22
+msgid "Toggle tinyWYM"
 msgstr ""
 
 #: twym-admin-settings.php:19 twym-admin-settings.php:50

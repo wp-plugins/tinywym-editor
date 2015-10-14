@@ -46,3 +46,26 @@
 .mce-container.mce-wym .mce-btn.mce-submit button:hover {
 	background: #0091CD;
 }
+
+/**
+ * tinyWYM toggle button styles
+ */
+i.mce-i-twym-show,
+i.mce-i-twym-hide {
+	font: normal 20px/1 'dashicons';
+	padding: 0;
+	vertical-align: top;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-left: -2px;
+	padding-right: 2px;
+}
+
+i.mce-i-twym-show:before {
+	content: "\f177";
+}
+
+i.mce-i-twym-hide:before {
+	content: "\f530";
+}

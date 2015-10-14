@@ -262,7 +262,7 @@
 				while ( i-- ) {
 					node = nodes[i];
 					node.attr( 'data-wym-align', null );
-			 	}
+				}
 
 			});
 
@@ -322,8 +322,48 @@
 		 *
 		 * @uses doAnyTag()
 		 */
-		editor.addShortcut( 'ctrl+T', 'something', function() {
+		editor.addShortcut( 'ctrl+T', 'Create/Edit Tag shortcut', function() {
 			doAnyTag();
+		});
+
+		/**
+		 * Toggle tinyWYM button
+		 *
+		 * Allow users to toggle the tinyWYM styles by toggling the tiny-wym class
+		 * on the editor's html element. Also toggles the button icon also to show
+		 * relevant state.
+		 *
+		 * @uses twymToggle()
+		 */
+		editor.addButton( 'twym_toggle', {
+			title: editor.getLang( 'twym_editor.tooltip_toggle' ),
+			icon: 'twym-hide',
+			classes: 'wym-toggle widget btn',
+			onclick: function() {
+				// Toggle tinyWYM
+				twymToggle();
+				console.log( this );
+				// Change the button icon depending on whether tinyWYM is shown or not.
+				if ( editor.dom.hasClass( editor.$( 'html' ), 'tiny-wym' ) ) {
+					this.icon( 'twym-hide' );
+				} else {
+					this.icon( 'twym-show' );
+				}
+			}
+		});
+
+		// TEMPRORARY - UNTIL I FIGURE OUT HOW TO CHANGE THE ICON ON KEYBOARD SHORTCUT
+		function twymToggle() {
+			// Toggle tiny-wym class on editor's html element
+			editor.dom.toggleClass( editor.$( 'html' ), 'tiny-wym' );
+		}
+		// TEMPORARY =================================================================
+
+		/**
+		 * Keyboard shorcut for toggling tinyWYM styles
+		 */
+		editor.addShortcut( 'ctrl+W', 'Toggle tinyWYM styles', function() {
+			twymToggle();
 		});
 
 		/**

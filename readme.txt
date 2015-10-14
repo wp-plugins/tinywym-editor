@@ -3,7 +3,7 @@ Contributors: arickards
 Tags: tinyMCE, WYSIWYM, WP Editor
 Requires at least: 4.2.0
 Tested up to: 4.3
-Stable tag: 1.1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,10 @@ tinyWYM Editor allows administrators to disable tinyWYM for particular user role
 
 == Changelog ==
 
+= 1.2 =
+
+* Added new menu button to allow users to toggle tinyWYM styles on and off.
+
 = 1.1.1 =
 
 * Fix compatibility issue with older versions of PHP.
@@ -97,6 +101,10 @@ tinyWYM Editor allows administrators to disable tinyWYM for particular user role
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2 =
+
+* Added new menu button to allow users to toggle tinyWYM styles on and off.
 
 = 1.1 =
 
