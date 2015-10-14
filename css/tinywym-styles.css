@@ -213,7 +213,8 @@
 .tiny-wym sup,
 .tiny-wym tt,
 .tiny-wym var,
-.tiny-wym u {
+.tiny-wym u,
+.tiny-wym small {
 	background: #FAFAFA;
 	border: 2px dotted #C4C4C4;
 	padding: 1px 5px;
