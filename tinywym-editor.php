@@ -2,7 +2,7 @@
 /*
 Plugin Name: tinyWYM Editor
 Description: tinyWYM Editor converts WordPress's WYSIWYG visual editor into a WYSIWYM editor. tinyWYM Editor also give the the control anf flexibility of the text editor without having to leave the visual editor.
-Version:     1.2
+Version:     1.2.1
 Author:      Andrew Rickards
 License:     GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -132,6 +132,11 @@ function twym_register_mce_plugin() {
 		// Admin Styles for Modal Form
 		add_action( 'admin_enqueue_scripts', 'twym_enqueue_admin_style' );
 
+		// Load styles in BeaverBuilder's frontend editor
+		if ( get_query_var( 'fl_builder', true ) ) {
+			add_action( 'wp_enqueue_scripts', 'twym_enqueue_admin_style' );
+		}
+
 	}
 
 	// Tranlations
@@ -161,8 +166,8 @@ function twym_register_mce_button( $buttons ) {
 //* Enqueue Admin Styles for Modal Form ======================================= */
 function twym_enqueue_admin_style() {
 
-	wp_register_style( 'custom_wp_admin_css', plugins_url( 'css/modal-styles.css', __FILE__ ), false, '1.0.0' );
-	wp_enqueue_style( 'custom_wp_admin_css' );
+	wp_register_style( 'twym_admin_css', plugins_url( 'css/modal-styles.css', __FILE__ ), false, '1.0.0' );
+	wp_enqueue_style( 'twym_admin_css' );
 		
 }
 

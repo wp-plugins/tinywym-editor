@@ -3,7 +3,7 @@ Contributors: arickards
 Tags: tinyMCE, WYSIWYM, WP Editor
 Requires at least: 4.2.0
 Tested up to: 4.3
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,10 @@ tinyWYM Editor allows administrators to disable tinyWYM for particular user role
 
 == Changelog ==
 
+= 1.2.1 =
+
+* Fixed: Toggle button not showing in BeaverBuilder's front end editor.
+
 = 1.2 =
 
 * Added new menu button to allow users to toggle tinyWYM styles on and off.
@@ -101,6 +105,11 @@ tinyWYM Editor allows administrators to disable tinyWYM for particular user role
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+
+* Fixed: Toggle button not showing in BeaverBuilder's front end editor.
+* May need to clear browser's cache to see changes.
 
 = 1.2 =
 
