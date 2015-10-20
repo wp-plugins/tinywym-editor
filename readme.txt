@@ -73,6 +73,7 @@ tinyWYM Editor adds a button to the editor toolbar. Click it to toggle tinyWYM s
 7. Enter the new HTML tag name and any attributes you want it to have, then click 'Okay'.
 8. Elements are now wrapped in a new tag.
 9. Edit any element: Alt+Click any element then edit its tag and attributes.
+10. Toggle tinyWYM on and off with the button or ctrl+W.
 
 == Changelog ==
 
