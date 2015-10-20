@@ -1,9 +1,9 @@
 === tinyWYM Editor ===
 Contributors: arickards
-Tags: tinyMCE, WYSIWYM, WP Editor
+Tags: tinyMCE, WYSIWYM, WYSIWYG, WP Editor, visual editor, editor, tinywym
 Requires at least: 4.2.0
 Tested up to: 4.3
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,9 +54,13 @@ Click any element while holding the Shift+Alt and that element will be removed f
 
 tinyWYM Editor removes the current theme's editor stylesheet by default, however, you can enable your theme's editor stylesheet by going to Settings - tinyWYM Editor and checking 'Allow theme editor styles'. tinyWYM Editor removes other editor styles partly in order to prevent conflicts, but also because it is assumed that if you are using tinyWYM editor it is because you want to see the _markup_ being posted to the front end of the site and not what it will eventually look like. After all, that is what the plugin is for.
 
-= Can I disable tinyWYM Editor for certain users =
+= Can I disable tinyWYM Editor for certain users? =
 
 tinyWYM Editor allows administrators to disable tinyWYM for particular user roles; Administrators, Editors, Authors, or Contributors. Go to Settings - tinyWYM Editor.
+
+= How do I toggle the tinyWYM styles on and off? =
+
+tinyWYM Editor adds a button to the editor toolbar. Click it to toggle tinyWYM styles on and off. You and also use the keyboard shortcut ctrl+W.
 
 == Screenshots ==
 
@@ -71,6 +75,12 @@ tinyWYM Editor allows administrators to disable tinyWYM for particular user role
 9. Edit any element: Alt+Click any element then edit its tag and attributes.
 
 == Changelog ==
+
+= 1.2.2 =
+
+* Added keyboard shortcut (ctrl+W) for toggling tinyWYM styles on and off.
+* Update readme.text.
+* Update screenshots, banners and thumbnails.
 
 = 1.2.1 =
 
@@ -105,6 +115,10 @@ tinyWYM Editor allows administrators to disable tinyWYM for particular user role
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+
+* Added keyboard shortcut (ctrl+W) for toggling tinyWYM styles on and off.
 
 = 1.2.1 =
 

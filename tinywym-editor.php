@@ -2,7 +2,7 @@
 /*
 Plugin Name: tinyWYM Editor
 Description: tinyWYM Editor converts WordPress's WYSIWYG visual editor into a WYSIWYM editor. tinyWYM Editor also give the the control anf flexibility of the text editor without having to leave the visual editor.
-Version:     1.2.1
+Version:     1.2.2
 Author:      Andrew Rickards
 License:     GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt

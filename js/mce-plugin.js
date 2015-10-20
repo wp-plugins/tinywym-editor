@@ -327,47 +327,8 @@
 		});
 
 		/**
-		 * Toggle tinyWYM button
-		 *
-		 * Allow users to toggle the tinyWYM styles by toggling the tiny-wym class
-		 * on the editor's html element. Also toggles the button icon also to show
-		 * relevant state.
-		 *
-		 * @uses twymToggle()
-		 */
-		editor.addButton( 'twym_toggle', {
-			title: editor.getLang( 'twym_editor.tooltip_toggle' ),
-			icon: 'twym-hide',
-			classes: 'wym-toggle widget btn',
-			onclick: function() {
-				// Toggle tinyWYM
-				twymToggle();
-				console.log( this );
-				// Change the button icon depending on whether tinyWYM is shown or not.
-				if ( editor.dom.hasClass( editor.$( 'html' ), 'tiny-wym' ) ) {
-					this.icon( 'twym-hide' );
-				} else {
-					this.icon( 'twym-show' );
-				}
-			}
-		});
-
-		// TEMPRORARY - UNTIL I FIGURE OUT HOW TO CHANGE THE ICON ON KEYBOARD SHORTCUT
-		function twymToggle() {
-			// Toggle tiny-wym class on editor's html element
-			editor.dom.toggleClass( editor.$( 'html' ), 'tiny-wym' );
-		}
-		// TEMPORARY =================================================================
-
-		/**
-		 * Keyboard shorcut for toggling tinyWYM styles
-		 */
-		editor.addShortcut( 'ctrl+W', 'Toggle tinyWYM styles', function() {
-			twymToggle();
-		});
-
-		/**
-		 * Allow user to edit any element & attributes by alt-clicking
+		 * Allow user to edit any element & attributes by alt-clicking or
+		 * unwrap an element by shift+alt-clicking. 
 		 *
 		 * @uses openModal()
 		 */
@@ -402,6 +363,70 @@
 				// Open modal window to edit target element
 				openModal( 'altClick', element );
 			}
+		});
+
+		/************************************
+		 *** tinyWYM toggle functionality ***
+		 ************************************/
+		/**
+		 * Toggle tiny-wym class on editor's html element to hide and show
+		 * tinyWYM styles. 
+		 */
+		function twymToggle() {
+			editor.dom.toggleClass( editor.$( 'html' ), 'tiny-wym' );
+		}
+
+		/**
+		 * Toggle tinyWYM button
+		 *
+		 * Allow users to toggle the tinyWYM styles by toggling the tiny-wym class
+		 * on the editor's html element. Also toggles the button icon also to show
+		 * relevant state.
+		 *
+		 * @uses twymToggle()
+		 */
+		editor.addButton( 'twym_toggle', {
+			title: editor.getLang( 'twym_editor.tooltip_toggle' ),
+			icon: 'twym-hide',
+			classes: 'wym-toggle widget btn',
+			onclick: function() {
+				// Toggle tinyWYM
+				twymToggle();
+
+				// Change the button icon depending on whether tinyWYM is shown or not.
+				if ( editor.dom.hasClass( editor.$( 'html' ), 'tiny-wym' ) ) {
+					this.icon( 'twym-hide' );
+				} else {
+					this.icon( 'twym-show' );
+				}
+			}
+		});
+
+		/**
+		 * Keyboard shorcut for toggling tinyWYM styles
+		 *
+		 * @uses twymToggle()
+		 */
+		editor.addShortcut( 'ctrl+W', 'Toggle tinyWYM styles', function() {
+			twymToggle();
+
+			var buttons = editor.theme.panel.find( '.toolbar .btn' );
+
+			for ( var i = 0; i < buttons.length; i++ ) {
+				
+				var button = buttons[i];
+
+				if ( button.classes.cls.indexOf( 'wym-toggle' ) !== -1 ) {
+
+					if ( button.settings.icon === 'twym-show' ) {
+						button.icon( 'twym-hide' );
+					} else {
+						button.icon( 'twym-show' );
+					}
+
+				}
+
+			};
 		});
 
 	});
